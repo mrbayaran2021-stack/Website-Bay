@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan Untukmu</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1d2671, #c33764);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(15px);
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #c33764;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+#pesan {
+    display: none;
+    margin-top: 25px;
+    animation: muncul 1s ease;
+}
+
+.photo-box {
+    margin: 18px auto 10px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.8);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    animation: naik 5s linear infinite;
+}
+
+@keyframes naik {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hai, Ririn Syahfirah Zahra! ❤️</h1>
+    <p>Ada sesuatu yang ingin aku sampaikan.</p>
+
+    <button onclick="bukaPesan()">Buka Pesan 💌</button>
+
+    <div id="pesan">
+        <h2>Untuk Kamu</h2>
+
+        <div class="photo-box">
+            <img src="c:\Users\akbar\OneDrive\Pictures\foto abay\akbar\WhatsApp Image 2026-10-02 at 23.56.52.jpeg" alt="Foto kamu">
+        </div>
+
+        <br>
+        <p>
+            Aku mungkin bukan seseorang yang pandai
+            mengungkapkan perasaan melalui kata-kata.
+            <br><br>
+            Tapi aku ingin kamu tahu,
+            bahwa kehadiranmu punya arti tersendiri.
+            <br><br>
+            Tetap jadi dirimu sendiri, ya.
+            Semoga hal-hal baik selalu menyertaimu. 
+            SEMANGAT TERUS KERJANYA !! ❤️
+        </p>
+        <br>
+        <p>From Abay ✨</p>
+    </div>
+</div>
+
+<script>
+function bukaPesan() {
+    document.getElementById("pesan").style.display = "block";
+}
+
+function buatHati() {
+    const hati = document.createElement("div");
+    hati.className = "heart";
+    hati.innerHTML = "❤️";
+
+    hati.style.left = Math.random() * 100 + "vw";
+    hati.style.fontSize = (15 + Math.random() * 20) + "px";
+    hati.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(hati);
+
+    setTimeout(() => {
+        hati.remove();
+    }, 7000);
+}
+
+setInterval(buatHati, 500);
+</script>
+
+</body>
+</html>
